@@ -45,6 +45,19 @@ const arrNum7 = [0, 1, 2];
 const arrNum8 = [0, 1, 2, 3, 4, 5, 6];
 const arrNum9 = [0, 1, 2, 5, 6];
 
+const arrays = [
+  arrNum0,
+  arrNum1,
+  arrNum2,
+  arrNum3,
+  arrNum4,
+  arrNum5,
+  arrNum6,
+  arrNum7,
+  arrNum8,
+  arrNum9,
+];
+
 entry.addEventListener("change", handleEvent);
 
 colorSelect.addEventListener("change", () => {
@@ -95,28 +108,10 @@ function clearDisplay() {
 }
 
 function setDisplay() {
-  if (entry.value === "0") {
-    setEntry(arrNum0);
-  } else if (entry.value == 1) {
-    setEntry(arrNum1);
-  } else if (entry.value == 2) {
-    setEntry(arrNum2);
-  } else if (entry.value == 3) {
-    setEntry(arrNum3);
-  } else if (entry.value == 4) {
-    setEntry(arrNum4);
-  } else if (entry.value == 5) {
-    setEntry(arrNum5);
-  } else if (entry.value == 6) {
-    setEntry(arrNum6);
-  } else if (entry.value == 6) {
-    setEntry(arrNum6);
-  } else if (entry.value == 7) {
-    setEntry(arrNum7);
-  } else if (entry.value == 8) {
-    setEntry(arrNum8);
-  } else if (entry.value == 9) {
-    setEntry(arrNum9);
+  for (let i = 0; i <= 9; i++) {
+    if (entry.value == i) {
+      setEntry(arrays[i]);
+    }
   }
 }
 
