@@ -137,10 +137,16 @@ function setEntry(arr) {
   }
 }
 
+function getRandom(list) {
+  return list[Math.floor(Math.random() * list.length)];
+}
+
 function animate() {
   clearDisplay();
   entry.value = "-";
   let interval = 400;
+  let arrColors = ["green", "purple", "blue", "salmon", "pink", "red", "white"];
+  let arrNumb = [0, 1, 2, 3, 4, 5, 6];
 
   setTimeout(() => {
     buttonStartAnimation.disabled = true;
@@ -152,96 +158,15 @@ function animate() {
     ASegment.style.backgroundColor = "green";
   }, interval);
 
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorB", "purple");
-    BSegment.style.backgroundColor = "purple";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorC", "blue");
-    CSegment.style.backgroundColor = "blue";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorD", "salmon");
-    DSegment.style.backgroundColor = "salmon";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorE", "pink");
-    ESegment.style.backgroundColor = "pink";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorF", "red");
-    FSegment.style.backgroundColor = "red";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorA", "green");
-    ASegment.style.backgroundColor = "green";
-  }, interval);
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorB", "purple");
-    BSegment.style.backgroundColor = "purple";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorG", "white");
-    GSegment.style.backgroundColor = "white";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorE", "pink");
-    ESegment.style.backgroundColor = "pink";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorD", "salmon");
-    DSegment.style.backgroundColor = "salmon";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorC", "blue");
-    CSegment.style.backgroundColor = "blue";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorG", "white");
-    GSegment.style.backgroundColor = "white";
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    root.style.setProperty("--colorF", "red");
-    FSegment.style.backgroundColor = "red";
-  }, (interval += 50));
+  for (let i = 1; i < 35; i++) {
+    setTimeout(() => clearDisplay(), (interval += 100));
+    let color = getRandom(arrColors);
+    let x = getRandom(arrNumb);
+    setTimeout(() => {
+      root.style.setProperty(colorTriangles[x], color);
+      arrSeg[x].style.backgroundColor = color;
+    }, (interval += 5));
+  }
 
   setTimeout(() => clearDisplay(), (interval += 100));
 
@@ -269,55 +194,15 @@ function countDown() {
     colorSelect.disabled = true;
     buttonCountDown.style.backgroundColor = "rgba(255, 0, 0, 0.555)";
     setEntry(arrNum9);
-  }, 100);
-
-  setTimeout(() => clearDisplay(), (interval += 100));
-
-  setTimeout(() => {
-    setEntry(arrNum8);
   }, (interval += 50));
 
-  setTimeout(() => clearDisplay(), (interval += 1000));
+  for (let i = 8; i > 0; i--) {
+    setTimeout(() => clearDisplay(), (interval += 1000));
 
-  setTimeout(() => {
-    setEntry(arrNum7);
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 1000));
-
-  setTimeout(() => {
-    setEntry(arrNum6);
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 1000));
-
-  setTimeout(() => {
-    setEntry(arrNum5);
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 1000));
-
-  setTimeout(() => {
-    setEntry(arrNum4);
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 1000));
-
-  setTimeout(() => {
-    setEntry(arrNum3);
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 1000));
-
-  setTimeout(() => {
-    setEntry(arrNum2);
-  }, (interval += 50));
-
-  setTimeout(() => clearDisplay(), (interval += 1000));
-
-  setTimeout(() => {
-    setEntry(arrNum1);
-  }, (interval += 50));
+    setTimeout(() => {
+      setEntry(arrays[i]);
+    }, (interval += 50));
+  }
 
   setTimeout(() => clearDisplay(), (interval += 1000));
 
