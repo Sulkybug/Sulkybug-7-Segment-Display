@@ -10,6 +10,14 @@
   --colorG: rgba(218, 165, 32, 0.13);
 }
 
+html {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   background-color: rgb(0, 0, 0);
   height: 100vh;
@@ -225,13 +233,20 @@ h1 {
   justify-content: center;
   align-items: center;
   color: goldenrod;
-  margin-top: 40px;
 }
 
 @media only screen and (max-width: 720px) {
   .container {
     transform: scale(0.45);
     height: 100vh;
+  }
+
+  body {
+    width: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   .display {
@@ -260,7 +275,6 @@ h1 {
 
   body {
     height: 70vh;
-    margin-bottom: 5px;
   }
 }
 
